@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Srisakdi&display=swap');
+        body{
+            font-family: 'Srisakdi', cursive;
+            font-size:x-large
+        }
+        </style>
+    
+    <title>ดำเนิรพระราม</title>
+</head>
+<body>
+    <center>
+    <h1>ดำเนิรพระราม</h1>
+        <font size="6">สิทธิการิยะ ถ้า จะ ยาตรา ไป ค้า ขาย แห่ง ใด ตำ บล ใด ก็ ดี ให้ ดู ตำรา นี้ ก่อน แล้ว จึ่ง ไป ดี แล</font><br><br>
+    จะ เดิน ทาง เมื่อ ใด: <input type="text" id="time" class="time" style="font-size:30px;width:100px;height:40px;" > โมง
+        วัน 
+        <select id="day" class="day" style="font-size:30px;width:160px;height:40px">
+            <option value="วัน อาทิตย์">วัน อาทิตย์</option>
+            <option value="วัน จันทร์">วัน จันทร์</option>
+            <option value="วัน อังคาร">วัน อังคาร</option>
+            <option value="วัน พุฒ">วัน พุฒ</option>
+            <option value="วัน พฤหัศบดิ์">วัน พฤหัศบดิ์</option>
+            <option value="วัน สุกร์">วัน สุกร์</option>
+            <option value="วัน เสาร์">วัน เสาร์</option>
+          </select> 
+      => <button class="cal" onsubmit="cal()" style="font-size:24px">ทำนาย</button>
+      <br><br>
+      <hr>
+   <b><div id="timeb"></div><div id="timec"></div></b><br>
+   <div id="text"></div>
+     
+
+    </center>
+    <script>
+today = new Date();
+time = today.getHours()+'.'+ today.getMinutes()
+day = today.getDay()
+document.querySelector('.time').value = time
+
+if (day === 0){
+day = 'วัน อาทิตย์'
+} else if (day === 1){
+    day = 'วัน จันทร์'
+} else if (day === 2){
+    day = 'วัน อังคาร'
+} else if (day === 3){
+    day = 'วัน พุฒ'
+} else if (day === 4){
+    day = 'วัน พฤหัศบดิ์'
+} else if (day === 5){
+    day = 'วัน สุกร์'
+} else if (day === 5){
+    day = 'วัน เสาร์'
+}
+document.querySelector('.day').value = day
+
+function cal() {
+day = document.getElementById("day").value
+time = document.getElementById("time").value
+    if (day === 'วัน อาทิตย์'){
+        sunday()
+    } else if (day === 'วัน จันทร์'){
+         monday()
+    } else if (day === 'วัน อังคาร'){
+         tuesday()
+    } else if (day === 'วัน พุฒ'){
+         wednesday()
+    } else if (day === 'วัน พฤหัศบดิ์'){
+         thursday()
+    } else if (day === 'วัน สุกร์'){
+         friday()
+    } else if (day === 'วัน เสาร์'){
+         saturday()
+    }
+
+
+  
+    function sunday() {
+  //รุ่ง
+  if (time >= 6.00 && time <= 7.30){
+  timea = 'สุริยะ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๑ ยาม'
+  document.getElementById('text').innerHTML = 'จะ เสีย ตัว เสมือน ตาย ได้ เมื่อ พระราม เทพ ไป ตาม กวาง เสีย ษีดา เมื่อ ภาย หลัง ไม่ ดี แล'
+  } else if (time >= 7.30 && time <= 9.00){
+  timea = 'สุกระ'
+  document.getElementById('timec').innerHTML = '• ๒ ยาม'
+  document.getElementById('text').innerHTML = 'ไป หน ประจิม ผู้ หญิง จะ ให้ ลาภ ได้ เมื่อ พระ อังคาร ทำ ชู้ ด้วย นาง จันทร์'
+  } else if (time >= 9.00 && time <= 10.30){
+  timea = 'พุฒ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๓ ยาม'
+  document.getElementById('text').innerHTML = 'ไป ไม่ ดี ได้ เมื่อ พระลักษณ์ ต้อง โมกขศักดิ์'
+  } else if (time >= 10.30 && time <= 12.00){
+  timea = 'จันเทา'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๔ ยาม'
+  document.getElementById('text').innerHTML = 'ไป หน ทักษิณ จะ ได้ ลาภ อัน ดี ได้ เมื่อ พิเภก ไป เรียน โหร ได้ คูณ รางวัล ประเสริฐ นัก'
+  } else if (time >= 12.00 && time <= 13.30){
+  timea = 'เสารี'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๕ ยาม'
+  document.getElementById('text').innerHTML = 'ไป หน อุดร จะ ได้ ลาภ ได้ เมื่อ นาง ษีดา ได้ ลาภ ฤาษี'
+  } else if (time >= 13.30 && time <= 15.00){
+  timea = 'ครู'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๖ ยาม'
+  document.getElementById('text').innerHTML = 'ไป หน บูรพ์ ข้า ศึก จะ ให้ ลาภ ได้ เมื่อ พระราม ได้ ครอง ราชสมบัติ'
+  } else if (time >= 15.00 && time <= 16.30){
+  timea = 'ภุมมะ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๗ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ พระราม ฆ่า ธูขร ตาย จะ ชะนะ สัตรู'
+  } else if (time >= 16.30 && time <= 18.00){
+  timea = 'สุริยะ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๘ ยาม'
+  document.getElementById('text').innerHTML = 'อย่า ไป มิดี ได้ เมื่อ พระราม ตาม กวาง เสีย นาง ษีดา เมื่อ ภาย หลัง ยาม นั้น แล'
+  }   //ค่ำ
+  else if (time >= 18.00 && time <= 19.30){
+  timea = 'ระวิ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๑ ยาม'
+  document.getElementById('text').innerHTML = 'มโหถ ขุด อุโมงค์ ก็ ถึง ท้าว จุลนี ๕ ยก พล เสนี ออก จาก บูรี เสนี ก็ โห่ เอา ไชย'
+  } else if (time >= 19.30 && time <= 21.00){
+  timea = 'ชีโว'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๒ ยาม'
+  document.getElementById('text').innerHTML = 'ห้อม ล้อม ครรไล สมเด็จ ท้าว ไทย ก็ ถึง ท้าว จุลนี'
+  } else if (time >= 21.00 && time <= 22.30){
+  timea = 'สะสิ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๓ ยาม'
+  document.getElementById('text').innerHTML = 'นาง ปราษ โข ประตู ผูก อยู่ พรั่ง พรู ทั้ง นาง นักสนม วัง ใน'
+  } else if (time >= 22.30 && time <= 23.59){
+  timea = 'สุกโกร'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๔ ยาม'
+  document.getElementById('text').innerHTML = 'น้ำ พระ เนตร ไหล หลั่ง เสีย ทั้ง เวียง วัง สมเด็จ ท้าว จุลนี'
+  } else if (time >= 0.00 && time <= 1.30){
+  timea = 'ภุมโม'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๕ ยาม'
+  document.getElementById('text').innerHTML = 'ไป หน อุดร จะ ได้ ลาภ ได้ เมื่อ นาง ษีดา ได้ ลาภ ฤาษี'
+  } else if (time >= 1.30 && time <= 3.00){
+  timea = 'เสาโร'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๖ ยาม'
+  document.getElementById('text').innerHTML = 'ท้าว วิเทห์ ธิบดี ใน จิตร ยิน ดี ด้วย นาง ปัญจา'
+  } else if (time >= 3.00 && time <= 4.30){
+  timea = 'พุฒโฒ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๗ ยาม'
+  document.getElementById('text').innerHTML = 'หลง ด้วย ความ เสน่หา ยก พล โยธา ออก มา ถึง เมือง'
+  } else if (time >= 4.30 && time <= 6.00){
+  timea = 'ระวิ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๘ ยาม'
+  document.getElementById('text').innerHTML = 'สมเด็จ ท้าว จุลนี ใน ก็ แพ้ แก นักปราช คืน หนึ่ง'
+  }}
+
+  function monday() {
+  //รุ่ง
+  if (time >= 6.00 && time <= 7.30){
+  timea = 'จันเทา'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๑ ยาม'
+  document.getElementById('text').innerHTML = 'ไป จะ เสีย ของ ได้ เมื่อ พระ อาทิตย์ พบ พระ ราหู แล'
+  } else if (time >= 7.30 && time <= 9.00){
+  timea = 'เสารี'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๒ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ เข้า ไป หา ประจิม จะ ได้ ลาภ อัน พอ ใจ ได้ เมื่อ พระจันทกุมาร ดู มโหรศพ ได้ ลาภ อัน ดี แล'
+  } else if (time >= 9.00 && time <= 10.30){
+  timea = 'ครู'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๓ ยาม'
+  document.getElementById('text').innerHTML = 'ไป จะ เจ็บ จะ เสีย ตัว ได้ เมื่อ พระยา ทรภี เสีย แก่ พระยา ภาลี แล'
+  } else if (time >= 10.30 && time <= 12.00){
+  timea = 'ภุมมะ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๔ ยาม'
+  document.getElementById('text').innerHTML = 'ไป จะ ได้ ลาภ ได้ เมื่อ พระยา ราบ ไป เรียน ศิลปศาตร แล'
+  } else if (time >= 12.00 && time <= 13.30){
+  timea = 'สุริยะ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๕ ยาม'
+  document.getElementById('text').innerHTML = 'มิ ดี อย่า ไป เลย'
+  } else if (time >= 13.30 && time <= 15.00){
+  timea = 'สุกระ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๖ ยาม'
+  document.getElementById('text').innerHTML = 'ไป หน บูรพ์ จะ ได้ ลาภ ได้ เมื่อ พิเภก ได้ รางวัล'
+  } else if (time >= 15.00 && time <= 16.30){
+  timea = 'พุฒ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๗ ยาม'
+  document.getElementById('text').innerHTML = 'มิ ดี อย่า ไป เลย'
+  } else if (time >= 16.30 && time <= 18.00){
+  timea = 'จันเทา'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๘ ยาม'
+  document.getElementById('text').innerHTML = 'ไป หน ประ จิม จะ มี ลาภ ได้ เมื่อ พิเภก เข้า ไป มี ไชย ชะ นะ แล'
+  } //ค่ำ
+  else if (time >= 18.00 && time <= 19.30){
+  timea = 'สะสิ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๑ ยาม'
+  document.getElementById('text').innerHTML = 'ตริ แล้ว ทรง ธรรม์ ตรัส ถาม ด้วย พลัน คิด แล้ว กับ นาย สารถี'
+  } else if (time >= 19.30 && time <= 21.00){
+  timea = 'สุกโกร'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๒ ยาม'
+  document.getElementById('text').innerHTML = 'บมิ คลาศ เทวี นาง นาฎ คลอด เจ้า เตมีย์ พังงา'
+  } else if (time >= 21.00 && time <= 22.30){
+  timea = 'ภุมโม'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๓ ยาม'
+  document.getElementById('text').innerHTML = 'ครอง พระ วิไนย สิ้น สบ ไสมย จบ ทุก พระ คำภีร์ ลำบาก พระ ไทย ภูมี'
+  } else if (time >= 22.30 && time <= 23.59){
+  timea = 'เสาโร'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๔ ยาม'
+  document.getElementById('text').innerHTML = 'ใช้ นาย สารภี ขุด หลุม ด้วย ดั หวัง จะ ฝะง พระ ทรง ธรรม์'
+  } else if (time >= 0.00 && time <= 1.30){
+  timea = 'พุฒโฒ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๕ ยาม'
+  document.getElementById('text').innerHTML = 'ลุ เปน มุนี โปรด สัตว์ โลกีย์ อัคนาราช ทั้ง หลาย'
+  } else if (time >= 1.30 && time <= 3.00){
+  timea = 'ระวิ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๖ ยาม'
+  document.getElementById('text').innerHTML = 'พระ เตมีย์ ปัญญา ลุ แก่ โสดา พระ องค์ แสร้ง ทำ ใบ้'
+  } else if (time >= 3.00 && time <= 4.30){
+  timea = 'ชีโว'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๗ ยาม'
+  document.getElementById('text').innerHTML = 'ไม่ มี คำ ทำนาย แล'
+  } else if (time >= 4.30 && time <= 6.00){
+  timea = 'สะสิ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๘ ยาม'
+  document.getElementById('text').innerHTML = 'ใกล้ รุ่ง แล้ว แสง ฉาย เทว ดา ทั้ง หลาย ก็ ดบียด กัน ดัง แป้ง ยัด ทะนาน คืน หนึ่ง'
+  }}
+
+  function tuesday() {
+  //รุ่ง
+  if (time >= 6.00 && time <= 7.30){
+  timea = 'ภุมมะ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๑ ยาม'
+  document.getElementById('text').innerHTML = 'ไป มิ ดี ได้ เมื่อ พระ อาทิตย์ ประจญ ด้วย มหาเมฆ พระ อาทิตย์ แพ้ แล'
+  } else if (time >= 7.30 && time <= 9.00){
+  timea = 'สุริยะ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๒ ยาม'
+  document.getElementById('text').innerHTML = 'ไป หน บูรพ์ จะ พบ เพื่อน อันดี ได้ ลาภ อัน พอ ใจ ได้ เมื่อ พระ พุฒ เสด็จ ไป พระอินทร์ แต่ง เครื่อง ให้ ได้ ลาภ คราม ครัน'
+  } else if (time >= 9.00 && time <= 10.30){
+  timea = 'สุกระ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๓ ยาม'
+  document.getElementById('text').innerHTML = 'เช้า ไป จะ เปน ทุกข์ ได้ เมื่อ พระราม ใช้ พระ ลักษณ์ ไป รับ นาง ษีดา พระฤาษี มิ ให้ เปน ทุกข์ นัก แล'
+  } else if (time >= 10.30 && time <= 12.00){
+  timea = 'พุฒ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๔ ยาม'
+  document.getElementById('text').innerHTML = 'ดี มี ลาภได้ เมื่อพระ หัศบดี เปน มิตร กับ พระ สุริยา'
+  } else if (time >= 12.00 && time <= 13.30){
+  timea = 'จันเทา'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๕ ยาม'
+  document.getElementById('text').innerHTML = 'ไป หน บูรพ์ จะ มี ลาภ ได้ เมื่อ พระ อาทิตย์ ใช้ พระ เสาร์ ไป เอา ตัว พระ อังคาร มา ได้ เครื่อง บูชา'
+  } else if (time >= 13.30 && time <= 15.00){
+  timea = 'เสารี'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๖ ยาม'
+  document.getElementById('text').innerHTML = 'ไป มิ ดี จะ เสีย ตัว ได้ เมื่อ พระ อิศวร เล่น พะนัน เสีย แผ่น ดิน แล'
+  } else if (time >= 15.00 && time <= 16.30){
+  timea = 'ครู'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๗ ยาม'
+  document.getElementById('text').innerHTML = 'ไป จะ ต้อง เจ็บ ได้ เมื่อ พิเภก แพ้ แก่ พวก ตน แล'
+  } else if (time >= 16.30 && time <= 18.00){
+  timea = 'ภุมมะ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๘ ยาม'
+  document.getElementById('text').innerHTML = 'ไป มิดี ได้ เมื่อ พระโหรา ทาย ผิด พระยา ลงโทษ แล'
+  } //ค่ำ
+  else if (time >= 18.00 && time <= 19.30){
+  timea = 'ภุมโม'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๑ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ พระ บิดา ใช้ ให้ ไป หา มะม่วง มะนาว ถึง เมือง ทันตวัน'
+  } else if (time >= 19.30 && time <= 21.00){
+  timea = 'เสาโร'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๒ ยาม'
+  document.getElementById('text').innerHTML = 'มิ่ง ม้า พาชี พา พระ จร หนี ได้ ไม้ ตะพด ห่อ ยา'
+  } else if (time >= 21.00 && time <= 22.30){
+  timea = 'พุฒโฒ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๓ ยาม'
+  document.getElementById('text').innerHTML = 'รุ่ง แล้ว แสง สี พา พระ เหาะ หนี ข้าม ฝั่ง คง คา คืน หนึ่ง'
+  } else if (time >= 22.30 && time <= 23.59){
+  timea = 'ระวิ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๔ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ พระ ชนม์ สิบ หก ปี ศิลปสาตร ดี หา เลี้ยง มารดา'
+  } else if (time >= 0.00 && time <= 1.30){
+  timea = 'ชีโว'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๕ ยาม'
+  document.getElementById('text').innerHTML = 'ได้ นาง เมีย ขวัญ ครอง เมือง ทันตวัน อสุรา มาก มี'
+  } else if (time >= 1.30 && time <= 3.00){
+  timea = 'สะสิ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๖ ยาม'
+  document.getElementById('text').innerHTML = 'พวก พล ยักษา ติด ตาม ราชา ผวา เข้า คว้า พาชี'
+  } else if (time >= 3.00 && time <= 4.30){
+  timea = 'สุกโกร'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๗ ยาม'
+  document.getElementById('text').innerHTML = 'เล่น สบาย ใจ เหล่า คน ทั้ง หลาย ก็ แพ้ แก่ ภูมี'
+  } else if (time >= 4.30 && time <= 6.00){
+  timea = 'ภุมโม'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๘ ยาม'
+  document.getElementById('text').innerHTML = 'รุ่ง แล้ว แสง สี พา พระ เหาะ หนี ข้าม ฝั่ง คง คา คืน หนึ่ง'
+  }}
+
+  function wednesday() {
+  //รุ่ง
+  if (time >= 6.00 && time <= 7.30){
+  timea = 'พุฒ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๑ ยาม'
+  document.getElementById('text').innerHTML = 'ไป มิดี ได้ เมื่อ พระ อาทิตย์ ไป พบ ราหู เสีย ตัว เสีย ของ แล'
+  } else if (time >= 7.30 && time <= 9.00){
+  timea = 'จันเทา'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๒ ยาม'
+  document.getElementById('text').innerHTML = 'ไป หน ประจิม จะ ได้ ลาภ ได้ เมื่อ พระ จันทร์ ได้ เครื่อง บู ชา'
+  } else if (time >= 9.00 && time <= 10.30){
+  timea = 'เสารี'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๓ ยาม'
+  document.getElementById('text').innerHTML = 'ไป มิดี ได้ เมื่อ พระลักษณ์ ไป ตาม พระราม เสีย นาง ษีดา เมื่อ ภาย หลัง จะ เปน ความ เสมือน ดัง ตัว ตาย แล'
+  } else if (time >= 10.30 && time <= 12.00){
+  timea = 'ครู'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๔ ยาม'
+  document.getElementById('text').innerHTML = 'ไป หน ทักษิณ จะ ได้ ลาภ อัน พึง ใจ ได้ เมื่อ พระยา ไป เล่น สวน ดอก ไม้ ได้ นาง อัน พึง ใจ'
+  } else if (time >= 12.00 && time <= 13.30){
+  timea = 'ภุมมะ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๕ ยาม'
+  document.getElementById('text').innerHTML = 'หน อุดร จะ ได้ ลาภ ได้ เมื่อ พระ ราชคร หาย ถูก พระยา ให้ รางวัล แล'
+  } else if (time >= 13.30 && time <= 15.00){
+  timea = 'สุริยะ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๖ ยาม'
+  document.getElementById('text').innerHTML = 'ไป หน บูรพ์ จะ ได้ ลาภ อัน ดี ได้ เมื่อ พระ สุกร์ ได้ สม บัติ เทวา แล'
+  } else if (time >= 15.00 && time <= 16.30){
+  timea = 'สุกระ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๗ ยาม'
+  document.getElementById('text').innerHTML = 'ไป จะ เจ็บ ท้อง เจ็บ ตา ได้ เมื่อ พระยา แผลง ฤทธิ์ ด้วย เทพยดา เขา ตัด ใบ ตอง ตา บอด แล'
+  } else if (time >= 16.30 && time <= 18.00){
+  timea = 'พุฒ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๘ ยาม'
+  document.getElementById('text').innerHTML = 'ไป จะ มี ลาภ ได้ เมื่อ พระ พุฒ ได้ สมบัติ แล'
+  } //ค่ำ
+  else if (time >= 18.00 && time <= 19.30){
+  timea = 'พุฒโฒ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๑ ยาม'
+  document.getElementById('text').innerHTML = 'โจร ไป ใน ไพร พบ ชาว ไร่ ชวน กัน เจรจา'
+  } else if (time >= 19.30 && time <= 21.00){
+  timea = 'ระวิ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๒ ยาม'
+  document.getElementById('text').innerHTML = 'พระ ลอ เรื่อง แสน รัก นาง เพื่อน นาง แพน อยู่ ด้วย กัน มา'
+  } else if (time >= 21.00 && time <= 22.30){
+  timea = 'ชีโว'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๓ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ พระ ลอ ทรามไวย หนี จาก นาง ไป ต้อง คุณ เจ้า สมิง พราย'
+  } else if (time >= 22.30 && time <= 23.59){
+  timea = 'สะสิ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๔ ยาม'
+  document.getElementById('text').innerHTML = 'พระ ลอ ไคล คลา ออก จาก พารา พบ พระ บุญ ไกร'
+  } else if (time >= 0.00 && time <= 1.30){
+  timea = 'สุกโกร'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๕ ยาม'
+  document.getElementById('text').innerHTML = 'พี่น้อง รักษา อาหาร นา ๆ ชื่อ นาง เพื่อน นาง แพน'
+  } else if (time >= 1.30 && time <= 3.00){
+  timea = 'ภุมโม'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๖ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ พระ มารดา คำนึง ราชา เศร้าโศก พระ ไทย'
+  } else if (time >= 3.00 && time <= 4.30){
+  timea = 'เสาโร'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๗ ยาม'
+  document.getElementById('text').innerHTML = 'รัก นาง มิ คลาย ต้อง คุณ สมิง พราย กลับ มา หา นาง'
+  } else if (time >= 4.30 && time <= 6.00){
+  timea = 'พุฒโฒ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๘ ยาม'
+  document.getElementById('text').innerHTML = 'รุ่ง แล้ว แสง ใส พระ ลอ เอว บาง มา ด้วย ยินดี คืน หนึ่ง'
+  }}
+
+  function thursday() {
+  //รุ่ง
+  if (time >= 6.00 && time <= 7.30){
+  timea = 'ครู'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๑ ยาม'
+  document.getElementById('text').innerHTML = 'ไป ให้ หก คืน หลัง ได้ เมื่อ พระ อาทิตย์ ไป พบ พระ ราหู กลาง ทาง ร้าย นัก แล'
+  } else if (time >= 7.30 && time <= 9.00){
+  timea = 'ภุมมะ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๒ ยาม'
+  document.getElementById('text').innerHTML = 'ไป หน ประจิม ผู้ หญิง จะ ให้ ของ อัน พอ ใจ ได้ เมื่อ พระ พุฒ เอา นาง ไป ไว้ ใน วิมาน แล'
+  } else if (time >= 9.00 && time <= 10.30){
+  timea = 'สุริยะ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๓ ยาม'
+  document.getElementById('text').innerHTML = 'ไป จะ เสีย ของ จะ พบ สัตรู ได้ เมื่อ พระ อังคาร ให้ เล่น ชู้ เขา จับ ได้ แล'
+  } else if (time >= 10.30 && time <= 12.00){
+  timea = 'สุกระ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๔ ยาม'
+  document.getElementById('text').innerHTML = 'ไป จะ ได้ ลาภ ตาม ทาง ได้ เมื่อ พระ สุกร์ ไป ตาม เสด็จ พระ อาทิตย์ ได้ รางวัล แล'
+  } else if (time >= 12.00 && time <= 13.30){
+  timea = 'พุฒ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๕ ยาม'
+  document.getElementById('text').innerHTML = 'ไป หน อุดร จะ ได้ ลาภ อัน ดี ได้ เมื่อ พระ สุกร์ ไป เรียน ศิลปศาสตร จบ ทุก อัน แล'
+  } else if (time >= 13.30 && time <= 15.00){
+  timea = 'จันเทา'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๖ ยาม'
+  document.getElementById('text').innerHTML = 'ไป จะ พบ พี่ น้อง กลาง ทาง ได้ เมื่อ พระ ฤาษี ได้ เครื่อง บูชา แล'
+  } else if (time >= 15.00 && time <= 16.30){
+  timea = 'เสารี'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๗ ยาม'
+  document.getElementById('text').innerHTML = 'ไป ข้า ศึก จะ ให้ โทษ ได้ เมื่อ พระ อังคาร ไป ทำชู้ ด้วย นาง จันทร์ ราชครู น้อง เขา จับ ตัว ได้ แล'
+  } else if (time >= 16.30 && time <= 18.00){
+  timea = 'ครู'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๘ ยาม'
+  document.getElementById('text').innerHTML = 'ไป หน อุดร จะ ได้ ลาภ อัน พอ ใจ ได้ เมื่อ พระ ประหัศบดี ได้ สุชาดา มา เปน เมีย แล'
+  } //ค่ำ
+  else if (time >= 18.00 && time <= 19.30){
+  timea = 'ชีโว'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๑ ยาม'
+  document.getElementById('text').innerHTML = 'พระ สัทธนู จอม ไกร เสด็จ ลง สำเภา ไป แล้ว พลัด เจ้า เทวี'
+  } else if (time >= 19.30 && time <= 21.00){
+  timea = 'สะสิ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๒ ยาม'
+  document.getElementById('text').innerHTML = 'นาง ที่ ใน ปราง อ้อน แอ้น เอว บาง ชื่อ นาง ตลับ พับภา'
+  } else if (time >= 21.00 && time <= 22.30){
+  timea = 'สุกโกร'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๓ ยาม'
+  document.getElementById('text').innerHTML = 'ลุ ถึง นาง นาฎ ขึ้น บน ปราสาท ชมโฉม เทวี'
+  } else if (time >= 22.30 && time <= 23.59){
+  timea = 'ภุมโม'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๔ ยาม'
+  document.getElementById('text').innerHTML = 'มา ถึง บรรณ ศาลา อัศดร มิ่ง ม้า ราชา ก็ เศร้า พระ ไทย'
+  } else if (time >= 0.00 && time <= 1.30){
+  timea = 'เสาโร'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๕ ยาม'
+  document.getElementById('text').innerHTML = 'มิ่ง ม้า พาชี เหาะ ด้วย ฤทธิ์ พาชี เหลียว แล ดู นาง'
+  } else if (time >= 1.30 && time <= 3.00){
+  timea = 'พุฒโฒ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๖ ยาม'
+  document.getElementById('text').innerHTML = 'ม้า แก้ว อาชา พา พระ เหาะ มา ใน เวหา อากาศ'
+  } else if (time >= 3.00 && time <= 4.30){
+  timea = 'ระวิ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๗ ยาม'
+  document.getElementById('text').innerHTML = 'พระ สัทธนู ภูมี พา นาง เทวี เหาะ หนี มา หา พระ มารดา'
+  } else if (time >= 4.30 && time <= 6.00){
+  timea = 'ชีโว'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๘ ยาม'
+  document.getElementById('text').innerHTML = 'รุ่ง แล้ว แสง สี เดิน ดง พง พี เทวี บังอร คืน หนึ่ง'
+  }}
+
+  function friday() {
+  //รุ่ง
+  if (time >= 6.00 && time <= 7.30){
+  timea = 'สุกระ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๑ ยาม'
+  document.getElementById('text').innerHTML = 'ไป จะ เสีย ของ ได้ เมื่อ พระ อังคาร ไป เล่น แพ้ แก่ เทพยุดา แล'
+  } else if (time >= 7.30 && time <= 9.00){
+  timea = 'พุฒ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๒ ยาม'
+  document.getElementById('text').innerHTML = 'ไป หน ประจิม จะ พบ หญิง อัน พึง ใจ ได้ เมื่อ พระ อังคาร ไป เล่น ชู้ นั้น ได้ ลาภ แล'
+  } else if (time >= 9.00 && time <= 10.30){
+  timea = 'จันเทา'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๓ ยาม'
+  document.getElementById('text').innerHTML = 'ไป หน อุดร จะ ได้ สิ่ง ของ อัน พอ ใจ ได้ เมื่อ พระ อังคาร ไป เล่น ได้ ลูก ไม้ อัน มี รศ มา แล'
+  } else if (time >= 10.30 && time <= 12.00){
+  timea = 'เสารี'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๔ ยาม'
+  document.getElementById('text').innerHTML = 'ไป จะ มี ลาภ ได้ เมื่อ พระ สุกร์ ไป อาบ น้ำ ใน สระ ได้ นาง มา ๆ เปน เมีย'
+  } else if (time >= 12.00 && time <= 13.30){
+  timea = 'ครู'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๕ ยาม'
+  document.getElementById('text').innerHTML = 'ไป จะ พบ มิตร สหายเก่า ใด้ เมื่อ พระ อาทิตย์ พา เอา นาง มา เลี้ยง แล'
+  } else if (time >= 13.30 && time <= 15.00){
+  timea = 'ภุมมะ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๖ ยาม'
+  document.getElementById('text').innerHTML = 'ไป หน อุดร จะ ได้ ลาภ มา สู่ เรือน ได้ เมื่อ พ่อ เปน เสนา บดี จะ ได้ ลาภ แล'
+  } else if (time >= 15.00 && time <= 16.30){
+  timea = 'สุริยะ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๗ ยาม'
+  document.getElementById('text').innerHTML = 'อย่า ไป จะ เจ็บ จะ เสีย ของ ได้ เมื่อ พระยา ไป เอา เมือง เขา มิ ได้ กลับ คืน มา เปล่า แล'
+  } else if (time >= 16.30 && time <= 18.00){
+  timea = 'สุกระ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๘ ยาม'
+  document.getElementById('text').innerHTML = 'ไป จะ เสีย ของ คืน มา จะ เสีย เรือน ได้ เมื่อ นาง มเหษี ทำ ชู้ ด้วย พระ อังคาร เขา จับ ได้ แล'
+  } //ค่ำ
+  else if (time >= 18.00 && time <= 19.30){
+  timea = 'สุกโกร'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๑ ยาม'
+  document.getElementById('text').innerHTML = 'ชูชก ใจ ฉกรรจ์ ติด ตาม ทรง ธรรม์ ขอ ชาลี กัณหา'
+  } else if (time >= 19.30 && time <= 21.00){
+  timea = 'ภุมโม'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๒ ยาม'
+  document.getElementById('text').innerHTML = 'สอง ศรี ตรวจ ริ้ ตรี พล ไป รับ พระ ศรี ถึง เขา วง กฎ'
+  } else if (time >= 21.00 && time <= 22.30){
+  timea = 'เสาโร'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๓ ยาม'
+  document.getElementById('text').innerHTML = 'หมู่ พราหมณี ขอ พระยา หัตถี ทรง ธรรม์ ให้ บมิ นาน'
+  } else if (time >= 22.30 && time <= 23.59){
+  timea = 'พุฒโฒ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๔ ยาม'
+  document.getElementById('text').innerHTML = 'สี กระษัตร คลา ไคล เข้า ดง พง ไพร ลุ ถึง ป่า ปิมพานต์'
+  } else if (time >= 0.00 && time <= 1.30){
+  timea = 'ระวิ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๕ ยาม'
+  document.getElementById('text').innerHTML = 'พบ พระ ไอยกา ถ่าย สอง พังงา สิ่ง ละร้อย ด้วย ดี'
+  } else if (time >= 1.30 && time <= 3.00){
+  timea = 'ชีโว'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๖ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ พระ เวสสันดร เสวย ราช นคร บูรี รมย์ ศุข เกษม'
+  } else if (time >= 3.00 && time <= 4.30){
+  timea = 'สะสิ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๗ ยาม'
+  document.getElementById('text').innerHTML = 'มนตรี ถ้วน หน้า ขับ พระ ราชา ออก จาก เวียง ไชย'
+  } else if (time >= 4.30 && time <= 6.00){
+  timea = 'สุกโกร'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๘ ยาม'
+  document.getElementById('text').innerHTML = 'รุ่ง แล้ว ลา พรต จาก เขา วงกฎ เชิญ เข้า ครอง พารา คืน หนึ่ง'
+  }}
+
+  function saturday() {
+  //รุ่ง
+  if (time >= 6.00 && time <= 7.30){
+  timea = 'เสารี'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๑ ยาม'
+  document.getElementById('text').innerHTML = 'ไป จะ ต้อง เขี้ยว งา บาด เจ็บ ได้ เมื่อ พระ อาทิตย์ เอา ของ ไป ฝาก พบ คน ร้าย ยาม นั้น แล'
+  } else if (time >= 7.30 && time <= 9.00){
+  timea = 'ครู'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๒ ยาม'
+  document.getElementById('text').innerHTML = 'ไป จะ ได้ ลาภ อาหาร อัน ดี แล'
+  } else if (time >= 9.00 && time <= 10.30){
+  timea = 'ภุมมะ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๓ ยาม'
+  document.getElementById('text').innerHTML = 'ไป จะ เสีย ของ เปน ทุกข์ ได้ เมื่อ พระ อังคาร ขึ้น เรือน เขาๆ จับ ได้ เปน โทษ แล'
+  } else if (time >= 10.30 && time <= 12.00){
+  timea = 'สุริยะ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๔ ยาม'
+  document.getElementById('text').innerHTML = 'ไม่ มี คำ ทำนาย แล'
+  } else if (time >= 12.00 && time <= 13.30){
+  timea = 'สุกระ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๕ ยาม'
+  document.getElementById('text').innerHTML = 'ไป อุดร จะ ได้ ลาภได้ เมื่อ นาง ษีดา จะ ได้ ความ ศุข แล'
+  } else if (time >= 13.30 && time <= 15.00){
+  timea = 'พุฒ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๖ ยาม'
+  document.getElementById('text').innerHTML = 'ไป จะ ได้ ลาภ ได้ เมื่อ พระ อาทิตย์ ไป พบ เศรษฐี บูชา แล'
+  } else if (time >= 15.00 && time <= 16.30){
+  timea = 'จันเทา'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๗ ยาม'
+  document.getElementById('text').innerHTML = 'ไป จะ เสีย ของ จะ ได้ ทุกข์ ได้ เมื่อ พระ อาทิตย์ ให้ พระ เสาร์ ไป จับ พระ อังคาร เขา จับ ได้ แล'
+  } else if (time >= 16.30 && time <= 18.00){
+  timea = 'เสารี'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๘ ยาม'
+  document.getElementById('text').innerHTML = 'ไป จะ เสีย ของ ได้ เมื่อ อักขมุขี เปน ทุกข์ เพราะ ผัว หนี แล'
+  } //ค่ำ
+  else if (time >= 18.00 && time <= 19.30){
+  timea = 'เสาโร'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๑ ยาม'
+  document.getElementById('text').innerHTML = 'หนุมาณ อ่าน มนต์ ผูก ผม ทั้ง สอง คน มณโฑ กับ ท้าว ราพนา สูร'
+  } else if (time >= 19.30 && time <= 21.00){
+  timea = 'พุฒโฒ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๒ ยาม'
+  document.getElementById('text').innerHTML = 'หนุมาณ ใจ ฉกรรจ์ โจน เล่น สวน ขวัญ ย่อย ยับ มิ นาน'
+  } else if (time >= 21.00 && time <= 22.30){
+  timea = 'ระวิ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๓ ยาม'
+  document.getElementById('text').innerHTML = 'นัก เลง สาย สมร ต่อ ด้วย พานร บ้าง ก็ ตาย ปะ กัน ไป'
+  } else if (time >= 22.30 && time <= 23.59){
+  timea = 'ชีโว'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๔ ยาม'
+  document.getElementById('text').innerHTML = 'หนุมาณ เหาะ ไป ใกล้ เมือง ลงกา ไชย ถึง ท้าว ยักษ เสีย กล'
+  } else if (time >= 0.00 && time <= 1.30){
+  timea = 'สะสิ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๕ ยาม'
+  document.getElementById('text').innerHTML = 'แวะ ไป บูรี ไกล ถวาย แหวน อรไทย ทูล นาง ษีดา ที่ ใน ส่วน ขวัญ'
+  } else if (time >= 1.30 && time <= 3.00){
+  timea = 'สุกโกร'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๖ ยาม'
+  document.getElementById('text').innerHTML = 'สหัสกุมาร โกรธ นัก ใช้ ขุน นาง ยักษ ขับ พล ทหาร เข้า ต่อ พานร'
+  } else if (time >= 3.00 && time <= 4.30){
+  timea = 'ภุมโม'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๗ ยาม'
+  document.getElementById('text').innerHTML = 'หนุมาณ ตัว กล้า ออกไป อาสา พระราม เทพ จอม ไกร'
+  } else if (time >= 4.30 && time <= 6.00){
+  timea = 'เสาโร'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๘ ยาม'
+  document.getElementById('text').innerHTML = 'รุ่ง แล้ว แสง ใส เผา เมือง ลงกา ไชย ไฟ ก็ ไหม้ อยู่ ที่ นั้น คืน หนึ่ง'
+  }}
+
+
+
+}
+document.querySelector('.cal').addEventListener("click", ()=>cal())
+
+</script>
+</body>
+</html>
